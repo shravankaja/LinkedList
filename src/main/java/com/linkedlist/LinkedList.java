@@ -9,7 +9,6 @@ public class LinkedList {
         this.head = null;
     }
 
-
     public void addToLinkedListTest(INode newNode) {
         if (head == null) {
             this.head = newNode;
@@ -33,6 +32,12 @@ public class LinkedList {
             this.tail.setNext(newNode);
             this.tail = newNode;
         }
+    }
+
+    public void insertToLinkedList(INode beforeNode, INode afterNode, INode newNode) {
+        INode temp = beforeNode.getNext();
+        beforeNode.setNext(newNode);
+        newNode.setNext(afterNode);
     }
 
     public void printLinkedList() {
