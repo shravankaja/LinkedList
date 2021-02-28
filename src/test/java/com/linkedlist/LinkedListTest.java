@@ -136,4 +136,24 @@ public class LinkedListTest<T> {
                 secondNode.getNext().equals(fourthNode) && fourthNode.getNext().equals(thirdNode);
         Assertions.assertTrue(result);
     }
+
+    @Test
+    void searchAndDeleteLinkedListTest() {
+        MyNode<Integer> firstNode = new MyNode<>(56);
+        MyNode<Integer> secondNode = new MyNode<>(30);
+        MyNode<Integer> thirdNode = new MyNode<>(40);
+        MyNode<Integer> fourthNode = new MyNode<>(70);
+        LinkedList linkedList = new LinkedList();
+        linkedList.appendToLinkedList(firstNode);
+        linkedList.appendToLinkedList(secondNode);
+        linkedList.appendToLinkedList(thirdNode);
+        linkedList.appendToLinkedList(fourthNode);
+        System.out.println("LinkedList before search and delete");
+        linkedList.printLinkedList();
+        System.out.println("After deleteion");
+        linkedList.deleteUsingKey(40);
+        linkedList.printLinkedList();
+        boolean result = firstNode.getNext().equals(secondNode) && secondNode.getNext().equals(fourthNode);
+        Assertions.assertTrue(result);
+    }
 }
