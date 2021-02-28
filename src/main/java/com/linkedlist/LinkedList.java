@@ -95,6 +95,21 @@ public class LinkedList<T> {
 
     }
 
+    public void deleteUsingKey(T key) {
+        INode temp = head;
+        INode tempAfter;
+        while (temp.getNext() != null) {
+            if (temp.getNext().getKey().equals(key)) {
+                tempAfter = temp.getNext().getNext();
+                temp.setNext(tempAfter);
+                break;
+            }
+            temp = temp.getNext();
+
+        }
+
+    }
+
     public void printAfterPopLast() {
         StringBuffer allNodes = new StringBuffer();
         INode temp = head;
