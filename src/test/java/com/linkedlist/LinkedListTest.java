@@ -116,4 +116,24 @@ public class LinkedListTest<T> {
         T result = (T) linkedList.searchUsingKey(56);
         Assertions.assertEquals(56, result);
     }
+
+    @Test
+    void searchAndInsertLinkedListTest() {
+        MyNode<Integer> firstNode = new MyNode<>(56);
+        MyNode<Integer> secondNode = new MyNode<>(30);
+        MyNode<Integer> thirdNode = new MyNode<>(70);
+        MyNode<Integer> fourthNode = new MyNode<>(40);
+        LinkedList linkedList = new LinkedList();
+        linkedList.appendToLinkedList(firstNode);
+        linkedList.appendToLinkedList(secondNode);
+        linkedList.appendToLinkedList(thirdNode);
+        System.out.println("LinkedList before search and insert");
+        linkedList.printLinkedList();
+        linkedList.searchUsingKeyInsert(30, fourthNode);
+        System.out.println("Lined list after search and insert");
+        linkedList.printLinkedList();
+        boolean result = firstNode.getNext().equals(secondNode) &&
+                secondNode.getNext().equals(fourthNode) && fourthNode.getNext().equals(thirdNode);
+        Assertions.assertTrue(result);
+    }
 }
