@@ -2,7 +2,7 @@ package com.linkedlist;
 
 import org.junit.jupiter.api.*;
 
-public class LinkedListTest {
+public class LinkedListTest<T> {
 
     @Test
     public void testSimpleLinkedList() {
@@ -102,5 +102,18 @@ public class LinkedListTest {
         linkedList.printAfterPopLast();
         boolean result = linkedList.head.equals(firstNode) && linkedList.tail.equals(secondNode);
         Assertions.assertTrue(result);
+    }
+
+    @Test
+    void searchLinkedListTest() {
+        MyNode<Integer> firstNode = new MyNode<>(56);
+        MyNode<Integer> secondNode = new MyNode<>(30);
+        MyNode<Integer> thirdNode = new MyNode<>(70);
+        LinkedList linkedList = new LinkedList();
+        linkedList.appendToLinkedList(firstNode);
+        linkedList.appendToLinkedList(secondNode);
+        linkedList.appendToLinkedList(thirdNode);
+        T result = (T) linkedList.searchUsingKey(56);
+        Assertions.assertEquals(56, result);
     }
 }
