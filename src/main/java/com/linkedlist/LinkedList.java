@@ -40,6 +40,12 @@ public class LinkedList {
         newNode.setNext(afterNode);
     }
 
+    public void popFirstElement() {
+        this.head = this.head.getNext();
+        //this.head=null;
+
+    }
+
     public void printLinkedList() {
         StringBuffer allNodes = new StringBuffer();
         INode temp = head;
