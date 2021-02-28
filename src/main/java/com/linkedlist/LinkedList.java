@@ -1,6 +1,6 @@
 package com.linkedlist;
 
-public class LinkedList {
+public class LinkedList<T> {
     public INode head;
     public INode tail;
 
@@ -68,6 +68,17 @@ public class LinkedList {
         }
         allNodes.append(temp.getKey());
         System.out.println(allNodes);
+    }
+
+    public T searchUsingKey(T key) {
+        INode temp = head;
+        while (temp.getNext() != null) {
+            if (temp.getKey().equals(key)) {
+                System.out.println("Found");
+            }
+            temp = temp.getNext();
+        }
+        return key;
     }
 
     public void printAfterPopLast() {
