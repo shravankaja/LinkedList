@@ -81,6 +81,20 @@ public class LinkedList<T> {
         return key;
     }
 
+    public void searchUsingKeyInsert(T key, INode newNode) {
+        INode temp = head;
+        INode tempAfter;
+        while (temp.getNext() != null) {
+            if (temp.getKey().equals(key)) {
+                System.out.println("Found");
+                tempAfter = temp.getNext();
+                insertToLinkedList(temp, tempAfter, newNode);
+            }
+            temp = temp.getNext();
+        }
+
+    }
+
     public void printAfterPopLast() {
         StringBuffer allNodes = new StringBuffer();
         INode temp = head;
