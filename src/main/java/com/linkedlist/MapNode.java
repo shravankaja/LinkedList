@@ -3,12 +3,12 @@ package com.linkedlist;
 public class MapNode<T, V> implements INode<T> {
     T key;
     V value;
-    MapNode<T,V> next;
+    MapNode<T, V> next;
 
     public MapNode(T key, V value) {
         this.key = key;
         this.value = value;
-        next=null;
+        next = null;
     }
 
     public MapNode() {
@@ -30,7 +30,7 @@ public class MapNode<T, V> implements INode<T> {
 
     @Override
     public void setKey(T key) {
-        this.key=key;
+        this.key = key;
     }
 
     @Override
@@ -40,14 +40,14 @@ public class MapNode<T, V> implements INode<T> {
 
     @Override
     public void setNext(INode next) {
-        this.next= (MapNode<T, V>) next;
+        this.next = (MapNode<T, V>) next;
     }
 
     @Override
     public String toString() {
-        StringBuilder stringBuilder=new StringBuilder();
-        stringBuilder.append("MapNode :{"+"K=").append(key).append(" V=").append(value).append('}');
-        if(next!=null)
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("MapNode :{" + "K=").append(key).append(" V=").append(value).append('}');
+        if (next != null)
             stringBuilder.append("->").append(next);
         return stringBuilder.toString();
     }
