@@ -157,7 +157,7 @@ public class LinkedListTest<T> {
         Assertions.assertTrue(result);
     }
 
-    @Test
+   /* @Test
     void sortLinkedList() {
         ComparableNode firstNode = new ComparableNode(20);
         ComparableNode secondNode = new ComparableNode(30);
@@ -168,4 +168,6 @@ public class LinkedListTest<T> {
         sortedLinkedList.add(thirdNode);
         sortedLinkedList.printLinkedList();
     }
+    */
+
 }
