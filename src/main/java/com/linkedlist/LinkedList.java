@@ -1,6 +1,6 @@
 package com.linkedlist;
 
-public class LinkedList<T> {
+public class LinkedList<T extends Comparable> {
     public INode head;
     public INode tail;
 
@@ -8,6 +8,7 @@ public class LinkedList<T> {
         this.head = null;
         this.head = null;
     }
+
 
     public void addToLinkedListTest(INode newNode) {
         if (head == null) {
@@ -21,6 +22,7 @@ public class LinkedList<T> {
             this.head.setNext(temp);
         }
     }
+
 
     public void popLastElement() {
         if (head != tail) {
@@ -108,6 +110,7 @@ public class LinkedList<T> {
 
         }
 
+
     }
 
     public void printAfterPopLast() {
@@ -121,4 +124,5 @@ public class LinkedList<T> {
         }
         System.out.println(allNodes);
     }
+
 }

@@ -1,5 +1,7 @@
 package com.linkedlist;
 
+import org.w3c.dom.*;
+
 public interface INode<T> {
     T getKey();
 
@@ -8,4 +10,5 @@ public interface INode<T> {
     INode<T> getNext();
 
     void setNext(INode next);
+
 }

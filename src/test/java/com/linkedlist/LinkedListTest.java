@@ -156,4 +156,16 @@ public class LinkedListTest<T> {
         boolean result = firstNode.getNext().equals(secondNode) && secondNode.getNext().equals(fourthNode);
         Assertions.assertTrue(result);
     }
+
+    @Test
+    void sortLinkedList() {
+        ComparableNode firstNode = new ComparableNode(20);
+        ComparableNode secondNode = new ComparableNode(30);
+        ComparableNode thirdNode = new ComparableNode(40);
+        SortedLinkedList sortedLinkedList = new SortedLinkedList();
+        sortedLinkedList.add(firstNode);
+        sortedLinkedList.add(secondNode);
+        sortedLinkedList.add(thirdNode);
+        sortedLinkedList.printLinkedList();
+    }
 }
