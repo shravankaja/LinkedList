@@ -37,19 +37,31 @@ public class IndexedLinkedList<T extends Comparable, V> {
         }
     }
 
-    public V get(T key) {
+    public int get(T key) {
         int index = getIndex(key);
         LinkedList<T> linkedList = this.bucketArray.get(index);
         if (linkedList == null) {
-            return null;
+            return 0;
         }
         MapNode<T, V> mapNode = (MapNode<T, V>) linkedList.search(key);
         if (mapNode == null) {
-            return null;
+            return 0;
 
         } else {
-            return mapNode.getValue();
+            int value = (int) mapNode.getValue();
+            return value;
         }
+    }
+
+    public void deleteNode(T key) {
+        int index = getIndex(key);
+        LinkedList<T> linkedList = this.bucketArray.get(index);
+        if (linkedList == null) {
+            System.out.println("No key ");
+        }
+        MapNode<T, V> mapNode = (MapNode<T, V>) linkedList.search(key);
+        T o = (T) "null";
+        mapNode.setKey(o);
     }
 
     @Override

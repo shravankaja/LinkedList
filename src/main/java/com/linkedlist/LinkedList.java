@@ -96,7 +96,6 @@ public class LinkedList<T extends Comparable> {
             }
             tempNode = tempNode.getNext();
         }
-
         return null;
     }
 
@@ -111,7 +110,6 @@ public class LinkedList<T extends Comparable> {
             }
             temp = temp.getNext();
         }
-
     }
 
     public void deleteUsingKey(T key) {
@@ -124,10 +122,7 @@ public class LinkedList<T extends Comparable> {
                 break;
             }
             temp = temp.getNext();
-
         }
-
-
     }
 
     public void printAfterPopLast() {
