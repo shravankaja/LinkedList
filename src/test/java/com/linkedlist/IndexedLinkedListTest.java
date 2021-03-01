@@ -18,7 +18,11 @@ public class IndexedLinkedListTest {
             indexedLinkedList.add(word, value);
         }
         int frequency = indexedLinkedList.get("paranoids");
-        System.out.println(indexedLinkedList);
         Assertions.assertEquals(3, frequency);
+        indexedLinkedList.deleteNode("are");
+        int frequencyOne = indexedLinkedList.get("are");
+        System.out.println(indexedLinkedList);
+        Assertions.assertEquals(0, frequencyOne);
+
     }
 }
