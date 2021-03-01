@@ -9,15 +9,14 @@ public class LinkedList<T extends Comparable> {
         this.head = null;
     }
 
-
-    public void addToLinkedListTest(INode newNode) {
-        if (head == null) {
+    public void addToLinkedListTest(INode<T> newNode) {
+        if (this.head == null) {
             this.head = newNode;
         }
-        if (tail == null) {
+        if (this.tail == null) {
             this.tail = newNode;
         } else {
-            INode temp = this.head;
+            INode<T> temp = this.head;
             this.head = newNode;
             this.head.setNext(temp);
         }
@@ -74,6 +73,12 @@ public class LinkedList<T extends Comparable> {
 
     public T searchUsingKey(T key) {
         INode temp = head;
+        if (temp == null) {
+            return null;
+        }
+        if (temp.getNext() == null) {
+            return null;
+        }
         while (temp.getNext() != null) {
             if (temp.getKey().equals(key)) {
                 System.out.println("Found");
@@ -81,6 +86,18 @@ public class LinkedList<T extends Comparable> {
             temp = temp.getNext();
         }
         return key;
+    }
+
+    public INode<T> search(T key) {
+        INode<T> tempNode = head;
+        while (tempNode != null && tempNode.getNext() != null) {
+            if (tempNode.getKey().equals(key)) {
+                return tempNode;
+            }
+            tempNode = tempNode.getNext();
+        }
+
+        return null;
     }
 
     public void searchUsingKeyInsert(T key, INode newNode) {
@@ -125,4 +142,12 @@ public class LinkedList<T extends Comparable> {
         System.out.println(allNodes);
     }
 
+    public void printNodes() {
+        System.out.println("My nodes :" + head);
+    }
+
+    @Override
+    public String toString() {
+        return "My Nodes {" + head + '}';
+    }
 }
