@@ -29,3 +29,4 @@ public class QueueNode<T extends Comparable<T>> implements INode<T> {
         this.next = (QueueNode<T>) next;
     }
 }
+tu
